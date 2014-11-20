@@ -1,0 +1,44 @@
+* {
+  font-family: arial;
+}
+
+section {
+  background: white;
+  width: 500px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px solid lightgray;
+}
+
+.postinfo {
+  font-size: 110%;
+  border-bottom: 2px solid lightgray;
+/*  height: 65px;   /* key piece when using float */*/
+}
+
+.postinfo:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+article {
+  display: block;
+  padding: 20px;
+}
+
+header {
+  font-weight: bold;
+  color: blue;
+}
+
+text {
+  font-weight: bold;
+  color: lightgray;
+}
+
+.profilepic, .userinfo {
+  float: left;
+  padding: 10px;
+}

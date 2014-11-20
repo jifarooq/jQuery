@@ -1,0 +1,11 @@
+div.row {
+  display: flex;
+}
+
+div.square {
+  height: 200px;
+  width: 200px;
+  border: 2px rgb(82, 50, 50) solid;
+  background: rgb(202, 199, 199);
+  float: left;
+}
