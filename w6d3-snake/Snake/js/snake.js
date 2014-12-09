@@ -47,6 +47,7 @@
   var Board = Game.Board = function() {
     this.snake = new Snake();
     this.grid = this.setupGrid();
+    this.dim = DIM;
   };
 
   DIM = 20;
