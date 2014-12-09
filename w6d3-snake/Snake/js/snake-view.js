@@ -1,16 +1,15 @@
 (function () {
 
-	if (typeof Game === "undefined") {
-		window.Game = {};
-	}
+	if (typeof Game === "undefined") { window.Game = {}; }
 
 	var View = Game.View = function (el) {
+		this.stepSize = 150;
 	  this.$el = el;
 	  this.board = new Game.Board();
 
 	  this.interval = window.setInterval(
 	  	this.step.bind(this), 
-	  	100
+	  	this.stepSize
   	);
 
 	  $(window).on("keydown", this.handleKeyEvent.bind(this));
@@ -29,10 +28,8 @@
 	  }
 	}
 
-		// this.$el.html(this.board.render());
 	View.prototype.render = function () {
-		var view = this;
-		var board = view.board;
+		var view = this, board = view.board;
 		var matrix = buildMatrix();
 
 		_(board.snake.segments).each(function(seg) {
@@ -43,49 +40,37 @@
 
 		_(matrix).each(function(row) {
 			var $row = $("<div class='row'></div>");
+
 			_(row).each(function ($cell) {
 				$row.append($cell);
 			});
 			view.$el.append($row)
 		});
 
-		//closure
 		function buildMatrix() {
 			var matrix = [];
 
-			for (var i = 0; i < board.dim; i++) {
-	      var cellsRow = [];
-	      for (var j = 0; j < board.dim; j++) {
-	        cellsRow.push($('<div class="square"></div>'));
-	      }
-	      matrix.push(cellsRow);
-	    }
+			_.times(board.dim, function() {
+				var $row = [];
+				_.times(board.dim, function() {
+					$row.push($('<div class="square"></div>'));
+				});
+				
+				matrix.push($row);
+			});
 
 	    return matrix;
 	  }
   };
 
 	View.prototype.step = function () {
-		if (this.board.validPos) {
+		if (this.board.snake.segments.length > 0) {
 			this.board.snake.move();
 			this.render();
 		} else {
-			alert("You crashed into the wall! You lose.");
+			alert("You lose!");
+			window.clearInterval(this.interval);
 		}
 	}
 
 })();
-
-// var htmlStr = "";
-
-// htmlStr += "<div class='snake' "
-
-// _.times(DIM, function () {
-// 	htmlStr += "<div class='row'>";
-
-// 	_.times(DIM, function () {
-// 		htmlStr += "<div class='square'></div>";
-// 	});
-
-// 	htmlStr += "</div>"
-// });
