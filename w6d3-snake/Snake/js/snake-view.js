@@ -3,7 +3,7 @@
 	if (typeof Game === "undefined") { window.Game = {}; }
 
 	var View = Game.View = function (el) {
-		this.stepSize = 150;
+		this.stepSize = 100;
 	  this.$el = el;
 	  this.board = new Game.Board();
 
@@ -36,6 +36,7 @@
 			matrix[ seg[0] ][ seg[1] ].addClass('snake');
 		});
 
+		matrix[board.apple.pos[0]][board.apple.pos[1]].addClass("apple");
 		this.$el.empty();
 
 		_(matrix).each(function(row) {
@@ -55,7 +56,7 @@
 				_.times(board.dim, function() {
 					$row.push($('<div class="square"></div>'));
 				});
-				
+
 				matrix.push($row);
 			});
 
