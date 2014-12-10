@@ -7,18 +7,38 @@
   </head>
   
   <body>
-    <div class="game">
+    <div class="game"></div>
+    <div class="showBoard"><br>
+      <div class="stats"></div>
+      <button class="pause">Pause</button>
+      <button class="play">Play</button> <br><br>
+      <button class='start'>Start</button>
+      <p class='nice-text'>Or Hit SPACEBAR to pause the game</p>
+      <p class='nice-text'>And ENTER to resume the game</p>
     </div>
+
     <script src="../js/jquery-2.1.1.js"></script>
     <script src="../js/underscore.js"></script>
     <script src="../js/snake.js"></script>
     <script src="../js/snake-view.js"></script>
 
     <script>
-      $(function() {
-        var $el = $(".game");
-        var view = new Game.View($el);
-      })
+      // var start = true;
+
+      // if (start) {
+      // }
+      
+        $(function() {
+          var $el = $(".game");
+          var view = new Game.View($el);
+        })
+
+      // $('.start').on('click', setStart);
+
+      // function setStart() {
+
+      // }
+
     </script>
 
   </body>
