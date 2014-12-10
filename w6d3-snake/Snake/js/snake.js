@@ -29,7 +29,7 @@
       this.addSegment();
     }
 
-    if (!this.isValid()) {
+    if ( !this.isValid() ) {
       // debugger
       this.segments = [];   // destroy snake if invalid
     }
@@ -42,19 +42,15 @@
 
   Snake.prototype.isValid = function() {
     var head = this.segments[0];
-    // debugger
 
-    // invalid if snake runs into itself
-    // if (snake.segments.length > 9) debugger;
-    _(this.segments.slice(1)).each(function(seg) {
-      if ( _matchedPositions(head, seg) ) {
-        // debugger
-        return false;
-      }
-    }.bind(this));
-
-    // invalid if snake is off the grid
     if ( !this.board.validPos() ) return false;
+
+    // error here was using underscore each
+    // with for loop, also need to use user-defined equals method!
+
+    for (var i = 1; i < this.segments.length; i++) {
+      if (_matchedPositions(head, this.segments[i])) return false;
+    }
 
     return true;
   }
