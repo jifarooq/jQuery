@@ -126,21 +126,30 @@
 
   // BOARD CLASS
   var Board = Game.Board = function() {
-    this.dim = DIM;
-    this.snake = new Snake(this);
     this.apples = [];
+    this.dim = this.setDimensions();
+    this.snake = new Snake(this);
 
-    _.times(NUM_APPLES, function() {
+    _.times(this.numApples(), function() {
       this.apples.push(new Apple(this));
     }.bind(this));
   };
 
-  DIM = 20;
-  NUM_APPLES = 5;
+  Board.prototype.numApples = function() {
+    var input = parseInt( $('#num-apples').val() );
+    if (input < 1 || input > (this.dim * this.dim) ) return 5;
+    return input;
+  }
+
+  Board.prototype.setDimensions = function() {
+    var dim = parseInt( $('#grid-size').val() );
+    if (dim < 1 || dim > 40) return 20;
+    return dim;
+  }
 
   Board.prototype.validPos = function() {
     var head = this.snake.segments[0];
     var x = head[0], y = head[1];
-    return (x >= 0 && x < DIM && y >= 0 && y < DIM);
+    return (x >= 0 && x < this.dim && y >= 0 && y < this.dim);
   };
 })();

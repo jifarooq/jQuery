@@ -1,3 +1,10 @@
+/* game basics */
+body {
+	background: #C8F6C8;
+	font-family: verdana;
+	text-align: center;
+}
+
 .square {
 	background: #f0f0f0;
 	border: 1px solid gray;
@@ -7,7 +14,7 @@
 }
 
 .apple{
-	background: red;
+	background: #CC0000;
 }
 .snake {
 	background: green;
@@ -18,36 +25,47 @@
 }
 
 /* customizations */
-.game {
-	float: left;
+#game-wrapper {
+	min-width: 500;
 }
 
-.showBoard {
-	font-family: verdana;
+.game, .showBoard, .controls {
+	float: left;
+	padding: 5%;
 	text-align: center;
 }
 
-.stats {
+#curScore {
 	color: green;
 	font-weight: bold;
 	font-size: 16px;
 }
 
-.pause, .play {
+button {
 	background: lightBlue;
 	border: 1px solid blue;
 	border-radius: 5px;
 	cursor: pointer;
 	font-family: verdana;
 	font-size: 14px;
-	height: 30px;
-	width: 60px;
+	min-height: 30px;
+	min-width: 60px;
 }
 
-.nice-text {
-	color: red;
+.nice-text, #num-apples, #grid-size {
+	color: #CC0000;
   font-size: 14px;
   font-weight: bold;
-  /*line-height: 18px;*/
-  padding: 2px;
+  padding: 1px;
+}
+
+#num-apples, #grid-size {
+	color: black;
+	font-weight: normal;
+	text-align: center;
+}
+
+label {
+	font-weight: bold;
+	padding: 1px
 }

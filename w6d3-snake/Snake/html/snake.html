@@ -7,14 +7,40 @@
   </head>
   
   <body>
-    <div class="game"></div>
-    <div class="showBoard"><br>
-      <div class="stats"></div>
-      <button class="pause">Pause</button>
-      <button class="play">Play</button> <br><br>
-      <button class='start'>Start</button>
-      <p class='nice-text'>Or Hit SPACEBAR to pause the game</p>
-      <p class='nice-text'>And ENTER to resume the game</p>
+    <div id='game-wrapper'>
+      <div class="game"></div>
+      <div class="showBoard"><br>
+        <table>
+          <thead>
+            <tr> <th width=50%>GAME</th><th width=50%>SCORE</th> </tr>
+          </thead>
+          <tbody class='results'></tbody>
+        </table>
+      </div>
+      
+      <div class='controls'>
+        <div id="curScore"></div>
+        <button class="pause">Pause</button>
+        <button class="play">Play</button>
+        <button class="start">New Game</button>
+        <p class='nice-text'>SPACEBAR to Pause</p>
+        <p class='nice-text'>ENTER to Resume</p>
+        <p class='nice-text'>-N- for New Game</p><br>
+
+        <label>Grid Dimensions (up to 40)
+          <input id='grid-size' size='1' value='20'>
+        </label><br>
+
+        <label>Number of Apples
+          <input id='num-apples' size='1' value='5'>
+        </label><br>
+
+        <label>Speed</label>
+        <input type='radio' name='speed' value='slow'>Slow
+        <input type='radio' name='speed' value='medium' checked='checked'>Medium
+        <input type='radio' name='speed' value='fast'>Fast<br>
+
+      </div>
     </div>
 
     <script src="../js/jquery-2.1.1.js"></script>
@@ -23,22 +49,17 @@
     <script src="../js/snake-view.js"></script>
 
     <script>
-      // var start = true;
+      startGame();
+      $('.start').on('click', startGame);
+      $(window).on('keydown', startGameFromKeyboard)
 
-      // if (start) {
-      // }
-      
-        $(function() {
-          var $el = $(".game");
-          var view = new Game.View($el);
-        })
+      function startGame() {
+        var view = new Game.View($(".game"));
+      }
 
-      // $('.start').on('click', setStart);
-
-      // function setStart() {
-
-      // }
-
+      function startGameFromKeyboard() {
+        if (event.keyCode === 78) $('.start').trigger('click');
+      }
     </script>
 
   </body>

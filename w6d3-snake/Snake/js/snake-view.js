@@ -5,7 +5,8 @@
 	var View = Game.View = function (el) {
 	  this.$el = el;
 	  this.board = new Game.Board();
-		this.stepSize = 100;
+		this.score = 0;
+		this.stepSize = this.setSpeed();
 
 	  this.playGame();
 
@@ -30,7 +31,18 @@
 
 	View.prototype.handlePausePlay = function (event) {
 		if (event.keyCode === 32) this.stopGame();  // spacebar
-		if (event.keyCode === 13) this.playGame();	// enter
+		if (event.keyCode === 13 && this.snakeLength() > 0) 	// enter
+			this.playGame();	
+	}
+
+	View.prototype.setSpeed = function() {
+		// normalized for 20x20 board
+		var baseSpeed = 100 / (this.board.dim / 20);
+		var selectedSpeed = $("input[name='speed']:checked").val();
+
+		if (selectedSpeed === 'slow') baseSpeed * 1.25;   // 25% slower
+		if (selectedSpeed === 'fast') baseSpeed * .75;   // 25% faster
+		return baseSpeed;
 	}
 
 	View.prototype.stopGame = function() {
@@ -84,20 +96,27 @@
   };
 
   View.prototype.renderStats = function() {
-  	var score = this.board.snake.applesEaten * 10;
-  	content = '<p>Your score: ' + score + '</p>';
-  	$('.stats').html(content);
+  	this.score = this.board.snake.applesEaten * 10;
+  	content = '<p>Your score: ' + this.score + '</p>';
+  	$('#curScore').html(content);
   }
 
 	View.prototype.step = function() {
-		if (this.board.snake.segments.length > 0) {
+		if (this.snakeLength() > 0) {
 			this.board.snake.move();
 			this.render();
 			this.renderStats();
 		} else {
 			alert("You lose!");
 			this.stopGame();
+			var gameCount = $('tr').length;
+			content = "<tr><td>" + gameCount + "</td><td>" + this.score + "</td></tr>"
+			$('.results').append(content);
 		}
+	}
+
+	View.prototype.snakeLength = function() {
+		return this.board.snake.segments.length;
 	}
 
 })();
