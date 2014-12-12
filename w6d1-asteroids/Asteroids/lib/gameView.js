@@ -32,11 +32,11 @@
     });
     
     key('right', function() {
-      view.game.ship.rotate('r', view.ctx);
+      view.game.ship.rotate(1, view.ctx);
     });
     
     key('left', function() {
-      view.game.ship.rotate('l', view.ctx);
+      view.game.ship.rotate(-1, view.ctx);
     })
     
     key('space', function() {
