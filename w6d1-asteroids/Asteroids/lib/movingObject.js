@@ -11,7 +11,9 @@
     this.color = color;
   }
   
+  // ??
   MovingObject.prototype.direction = function () {
+    // debugger
     var magnitude = Math.sqrt(Math.pow(this.velX, 2) + Math.pow(this.velY, 2));
     return [this.velX / magnitude, this.velY / magnitude];
   }

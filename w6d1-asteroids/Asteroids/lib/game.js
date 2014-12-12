@@ -13,11 +13,11 @@
   Game.prototype.addAsteroids = function () {
     var num = Game.NUM_ASTEROIDS;
     while(num--) {
-      var a = new window.ASTEROIDS.Asteroid(
+      var asteroid = new window.ASTEROIDS.Asteroid(
         [Math.random() * Game.DIM_X, Math.random() * Game.DIM_Y],
         10    // radius
       );
-      this.asteroids.push(a)
+      this.asteroids.push(asteroid)
     }
   }
   
@@ -31,7 +31,7 @@
       obj.draw(ctx);
     })
     
-    this.ship.draw(ctx);
+    this.ship.draw(ctx, 0);
   }
   
   Game.prototype.moveObjects = function () {
@@ -76,8 +76,6 @@
     
   }
   
-  
-    
   Game.DIM_X = 800;
   Game.DIM_Y = 800;
   Game.NUM_ASTEROIDS = 10;

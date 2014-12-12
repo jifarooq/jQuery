@@ -1,4 +1,5 @@
 // replace apples on interval?
+// add jQuery sortable?
 
 (function () {
 
@@ -43,11 +44,7 @@
 
   Snake.prototype.isValid = function() {
     var head = this.segments[0];
-
     if ( !this.board.validPos() ) return false;
-
-    // error here was using underscore each
-    // with for loop, also need to use user-defined equals method!
 
     for (var i = 1; i < this.segments.length; i++) {
       if (_matchedPositions(head, this.segments[i])) return false;
