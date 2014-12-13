@@ -1,6 +1,3 @@
-// replace apples on interval?
-// add jQuery sortable?
-
 (function () {
 
   if (typeof Game === "undefined") {

@@ -3,14 +3,14 @@
     window.ASTEROIDS = {};
   }
   
-  var Game = ASTEROIDS.Game = function () {
+  var Game = ASTEROIDS.Game = function() {
     this.asteroids = [];
-    this.ship = new window.ASTEROIDS.Ship ();
-    this.lives = 5;
     this.bullets = [];
+    this.lives = 5;
+    this.ship = new window.ASTEROIDS.Ship();
   }
     
-  Game.prototype.addAsteroids = function () {
+  Game.prototype.addAsteroids = function() {
     var num = Game.NUM_ASTEROIDS;
     while(num--) {
       var asteroid = new window.ASTEROIDS.Asteroid(
@@ -27,6 +27,7 @@
   
   Game.prototype.draw = function(ctx) {
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    // debugger
     this.objects().forEach(function(obj) {
       obj.draw(ctx);
     })
@@ -76,8 +77,8 @@
     
   }
   
-  Game.DIM_X = 1500;
-  Game.DIM_Y = 1000;
-  Game.NUM_ASTEROIDS = 10;
+  Game.DIM_X = 1200;
+  Game.DIM_Y = 800;
+  Game.NUM_ASTEROIDS = 20;
   
 })();

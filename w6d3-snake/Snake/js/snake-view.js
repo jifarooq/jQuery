@@ -1,5 +1,4 @@
 (function () {
-
 	if (typeof Game === "undefined") { window.Game = {}; }
 
 	var View = Game.View = function (el) {
@@ -107,7 +106,9 @@
 			this.render();
 			this.renderStats();
 		} else {
-			alert("You lose!");
+			// fancy alert
+			// debugger
+			sweetAlert("You lose!");
 			this.stopGame();
 			var gameCount = $('tr').length;
 			content = "<tr><td>" + gameCount + "</td><td>" + this.score + "</td></tr>"

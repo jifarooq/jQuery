@@ -1,6 +1,10 @@
 /* game basics */
+h1 {
+	color: #005000;
+}
+
 body {
-	background: #C8F6C8;
+	background: paleGreen; 
 	font-family: verdana;
 	text-align: center;
 }
