@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Corgi</title>
+    <link href="../CSS/tabs.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"  href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css"> 
+  </head>
+  <body>
+    <ul class='tabs' data-content-tabs='#content-tabs'>
+      <li><a href='#husky' class="active">Siberian Husky</a></li>
+      <li><a href='#golden'>Golden Retriever</a></li>
+      <li><a href='#swiss'>Greater Swiss Mountain Dog</a></li> 
+    </ul>
+    
+    <div class id="content-tabs">
+       
+  <!--added class tab-pane -->
+      <div id="husky" class="tab-pane active">
+        <p>Bred to be a sled dog, the Siberian Husky makes a great all-around dog. They are agreeable, alert, and outgoing. </p>
+      </div>
+      <div id="golden" class="tab-pane">
+        <p>The Golden Retriever is a happy-go-lucky clown. He's reliable, trustworthy, calm, friendly, gentle and confident. He's very eager to please you. He isn't a one-man dog because he loves everybody. </p>
+      </div>
+      <div id="swiss" class="tab-pane">
+        <p>The Greater Swiss Mountain Dog is a happy, jovial breed who loves people and craves attention and physical contact. They can be the ideal family pet for some, but are not the breed for everyone. </p>
+      </div>
+    </div>
+    
+    <script src="../JavaScript/jquery-1.11.1.js"></script>
+    <script src="../JavaScript/tabs.js"></script>
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>
+     
+  </body>
+</html>
+    

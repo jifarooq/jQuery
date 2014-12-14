@@ -1,0 +1,13 @@
+.carousel {
+  height: 500px;
+  width: 500px;
+}
+
+.items {
+  height: 100%;
+  width: 100%;
+}
+
+.items img:not(.active) {
+  display: none;
+}
