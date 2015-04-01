@@ -1,0 +1,22 @@
+/* --- Main --- */
+
+#main {
+  border: 2px solid lightgray;
+  border-top: 0;
+  display: block;
+  height: 31.25rem;
+  margin: 0 0 3.375rem 7rem;
+  width: 65.8125rem;
+}
+
+  #content, #sidebar {
+    float: left;
+    margin-top: 1.25rem;
+    padding: 1.5625rem;
+    width: 37.5rem;
+  }
+
+  #sidebar {
+    border-right: 2px solid lightgray;   
+    width: 17.1875rem;
+  }

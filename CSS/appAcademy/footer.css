@@ -1,0 +1,32 @@
+/* --- Footer --- */
+
+footer {
+  /* Display & Box Model */
+  border: 2px solid lightgray;
+  border-top: 0;
+  display: block;
+  margin-left: 7rem;
+  width: 65.8125rem;
+  
+  /* Color */
+  background: #D8D8D8;
+  color: gray;
+
+  /* Text */
+  line-height: 4.6875rem;
+  height: 4.6875rem;
+}
+
+  footer ul {
+    float: right;
+  }
+
+  footer li {
+    float: left;
+    margin-left: -1.875rem;
+  }
+
+#copyright {
+  float: left;
+  padding-left: 1.5625rem;
+}
