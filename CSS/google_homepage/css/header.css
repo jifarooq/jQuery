@@ -2,7 +2,6 @@
 html, body, header, nav, ul, li, a, footer, small {
   border: 0;
   font: inherit;
-  margin: 0;
   padding: 0;
   vertical-align: baseline;
 }
@@ -16,12 +15,30 @@ html, body, header, nav, ul, li, a, footer, small {
 #header {
   list-style-type: none;
   font-family: arial;
+  height: 30px;
 }
 
   #header li {
     color: #404040;
     float: right; 
     padding: 10px;
+  }
+
+  #header button {
+    /* Display & Box Model */
+    border: 1px solid #4285f4;
+    display: inline-block;
+    margin-top: -10px;
+    padding: 0 12px;
+
+    /* Color */
+    background: #4285f4;
+    color: #fff;
+
+    /* Text */
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
   }
 
   #header a {
