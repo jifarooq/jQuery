@@ -1,0 +1,89 @@
+/* --- Lists --- */
+nav > ul {
+  font-family: arial;
+  display: block;
+}
+
+.dropdown ul {
+  display: none;
+  margin: .3125rem 0 0 -.4375rem;
+  position: absolute;
+  width: 18.75rem;
+}
+
+  .dropdown:hover ul {
+    display: block;
+  }
+
+
+/* --- List Items --- */
+li {
+  list-style-type: none;
+  text-align: center;
+  width: 7.5rem;
+}
+
+  li.nestedItem {
+    border: 2px solid black;
+    border-top: 0;
+    color: black;
+    width: 100%;
+    z-index: 300;
+  }
+
+    li.nestedItem:hover {
+      background-color: gray;
+    }
+
+    li.topItem:hover {
+      background: black;
+    }
+
+
+/* --- Custom classes and ids --- */
+li.topItem, .AAStudents, .space {
+  /* Positioning */
+  float: left;
+
+  /* Display & Box Model */
+  border: 2px solid black;
+  border-right: 0;
+  height: 1.875rem;
+  padding: .3125rem;
+  
+  /* Color */
+  background-color: red;
+  color: white;
+
+  /* Text */
+  font-size: .95rem;
+  line-height: 1.875rem;
+}
+
+  .AAStudents {
+    font-weight: bold;
+    padding-left: 1.25rem;
+    width: 31.25rem;
+  }
+
+  .space {
+    width: 6.25rem;
+  }
+
+.circle {
+  /* Positioning */
+  float: right;
+
+  /* Display & Box Model */
+  border-radius: 50%;
+  height: 1.125rem;
+  width: 1.125rem;
+
+  /* Color */
+  background-color: black;
+  color: white;
+
+  /* Text */
+  font-size: .8125rem;
+  line-height: 1.25rem;
+}

@@ -1,0 +1,37 @@
+/* --- Reset user agent styles --- */
+html, body, header, nav, ul, li, a, footer, small {
+  border: 0;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* --- Set font --- */
+* {
+  font-family: arial;
+}
+
+/* --- Navbar --- */
+#header {
+  list-style-type: none;
+  font-family: arial;
+}
+
+  #header li {
+    color: #404040;
+    float: right; 
+    padding: 10px;
+  }
+
+  #header a {
+    text-decoration: none;
+  }
+
+    #header a:hover {
+      text-decoration: underline;
+    }
+
+    #header a:visited {
+      color: inherit;
+    }

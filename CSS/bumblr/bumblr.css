@@ -1,3 +1,4 @@
+/* --- General tags --- */
 * {
   font-family: arial;
 }
@@ -6,21 +7,8 @@ section {
   background: white;
   border: 10px solid lightgray;
   height: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 500px;
-}
-
-.postinfo {
-  border-bottom: 2px solid lightgray;
-  font-size: 110%;
-/*  height: 65px;   /* key piece when using float */*/
-}
-
-.postinfo:after {
-  clear: both;
-  content: "";
-  display: block;
 }
 
 article {
@@ -29,16 +17,28 @@ article {
 }
 
 header {
-  font-weight: bold;
   color: blue;
 }
 
-text {
-  font-weight: bold;
-  color: lightgray;
+
+/* --- Posts --- */
+.post {
+  border-bottom: 2px solid lightgray;
+  font-size: 110%;
 }
 
-.profilepic, .userinfo {
-  float: left;
-  padding: 10px;
+  .profilepic, .userinfo {
+    float: left;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .post:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+text {
+  color: lightgray;
 }

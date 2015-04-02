@@ -1,0 +1,13 @@
+/* --- Reset user agent styles --- */
+html, body, header, nav, ul, li, a, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* --- Set font.  The default size is 16px --- */
+* {
+  font-family: arial;
+}
