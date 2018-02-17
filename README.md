@@ -1,4 +1,4 @@
-#Projects
+# Projects
 
 - Asteroids
 - CSS website recreations
